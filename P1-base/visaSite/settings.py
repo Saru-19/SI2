@@ -27,11 +27,11 @@ load_dotenv(dotenv_path=env_file)
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'django-insecure-alczftn)j1#$v%xmk@5j(n*px43c8kxgi_ua4%khc+t7g_)s9d'
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = os.environ.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
-DEBUG = os.environ.get("DEBUG")
+DEBUG = os.environ.getenv("DEBUG")
 
 ALLOWED_HOSTS = ['*']
 
@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'visaSite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASE_URL = os.environ.get("DATABASE_SERVER_URL")
+DATABASE_URL = os.environ.getenv("DATABASE_SERVER_URL")
 DATABASES = {
     'default': dj_database_url.config(default=DATABASE_URL)
 }

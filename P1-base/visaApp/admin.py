@@ -1,3 +1,10 @@
 from django.contrib import admin
+from .models import Tarjeta, Pago
 
-# Register your models here.
+@admin.register(Tarjeta)
+class TarjetaAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(Pago)
+class PagoAdmin(admin.ModelAdmin):
+    pass
